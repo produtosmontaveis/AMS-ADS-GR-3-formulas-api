@@ -1,7 +1,10 @@
 package com.produtos.montaveis.formulasapi.api.controller;
 
 import com.produtos.montaveis.formulasapi.domain.model.monomio.Monomio;
+import com.produtos.montaveis.formulasapi.domain.model.monomio.Termo;
+import com.produtos.montaveis.formulasapi.domain.model.polinomio.MonomioPolinomio;
 import com.produtos.montaveis.formulasapi.domain.repository.MonomioRepository;
+import com.produtos.montaveis.formulasapi.domain.repository.TermoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,12 +39,23 @@ public class MonomioController {
         return ResponseEntity.ok(monomioRepository.save(monomio));
     }
 
+    @PutMapping("/{monomioId}")
+    public ResponseEntity<Monomio> updateMonomio(
+            @PathVariable Long monomioId,
+            @RequestBody Monomio monomio) {
+        if (!monomioRepository.existsById(monomioId)) {
+            return ResponseEntity.notFound().build();
+        }
+        monomio.setId(monomioId);
+        return ResponseEntity.ok(monomioRepository.save(monomio));
+    }
+
+
     @DeleteMapping("/{monomioId}")
     public ResponseEntity<Monomio> deleteMonomio(@PathVariable Long monomioId) {
         if (!monomioRepository.existsById(monomioId)) {
             return ResponseEntity.notFound().build();
         }
-
         monomioRepository.deleteById(monomioId);
         return ResponseEntity.noContent().build();
     }

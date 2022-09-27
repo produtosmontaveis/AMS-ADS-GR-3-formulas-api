@@ -1,4 +1,4 @@
-package com.produtos.montaveis.formulasapi.domain.repository;
+package com.produtos.montaveis.formulasapi.domain.repository.monomio;
 
 import com.produtos.montaveis.formulasapi.domain.model.monomio.Monomio;
 import org.springframework.data.jpa.repository.JpaRepository;

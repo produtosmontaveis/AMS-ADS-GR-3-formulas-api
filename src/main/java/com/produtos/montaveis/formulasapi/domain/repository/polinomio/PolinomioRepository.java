@@ -1,4 +1,4 @@
-package com.produtos.montaveis.formulasapi.domain.repository;
+package com.produtos.montaveis.formulasapi.domain.repository.polinomio;
 
 import com.produtos.montaveis.formulasapi.domain.model.polinomio.Polinomio;
 import org.springframework.data.jpa.repository.JpaRepository;

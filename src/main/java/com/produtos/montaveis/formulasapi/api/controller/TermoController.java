@@ -1,8 +1,7 @@
 package com.produtos.montaveis.formulasapi.api.controller;
 
-import com.produtos.montaveis.formulasapi.domain.model.monomio.Monomio;
 import com.produtos.montaveis.formulasapi.domain.model.monomio.Termo;
-import com.produtos.montaveis.formulasapi.domain.repository.TermoRepository;
+import com.produtos.montaveis.formulasapi.domain.repository.monomio.TermoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,12 +1,11 @@
 package com.produtos.montaveis.formulasapi.domain.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.produtos.montaveis.formulasapi.domain.model.binomio.Binomio;
 import com.produtos.montaveis.formulasapi.domain.model.polinomio.Polinomio;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -19,10 +18,9 @@ public class Sentenca {
 
     private String nome;
 
-    @OneToMany(mappedBy = "sentenca")
-    private Set<Polinomio> polinomios;
+    @OneToOne(mappedBy = "sentenca")
+    private Binomio binomio;
 
-    public void addPolinomioToSentenca(Polinomio polinomio) {
-        polinomios.add(polinomio);
-    }
+    @OneToOne(mappedBy = "sentenca")
+    private Polinomio polinomio;
 }

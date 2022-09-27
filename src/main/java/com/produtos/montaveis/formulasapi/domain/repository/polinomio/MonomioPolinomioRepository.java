@@ -1,4 +1,4 @@
-package com.produtos.montaveis.formulasapi.domain.repository;
+package com.produtos.montaveis.formulasapi.domain.repository.polinomio;
 
 import com.produtos.montaveis.formulasapi.domain.model.polinomio.MonomioPolinomio;
 import com.produtos.montaveis.formulasapi.domain.model.polinomio.MonomioPolinomioKey;
